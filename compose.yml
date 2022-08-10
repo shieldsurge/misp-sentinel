@@ -11,3 +11,4 @@ services:
       - CLIENT_SECRET=${CLIENT_SECRET:-client_secret}
       - TARGET_PRODUCT=${TARGET_PRODUCT:-targetProduct}
       - ACTION=${ACTION:-action}
+    entrypoint: "/run.sh"
