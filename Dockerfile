@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get dist-upgrade -y && apt-get upgrade && apt-get autoremove -y && apt-get clean && \
     apt-get install -y software-properties-common
     
-RUN apt-get install -y python3 python3-pip git
+RUN apt-get install -y python3 python3-pip git cron
 RUN pip3 install --upgrade pip
 
 WORKDIR /opt/
