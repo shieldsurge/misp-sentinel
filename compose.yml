@@ -1,6 +1,6 @@
 services:
   misp-sentinel:
-    build: misp_sentinel
+    build: .
     container_name: misp_sentinel
     image: misp_sentinel:latest
     environment:
