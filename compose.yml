@@ -1,5 +1,3 @@
-version: '1'
-
 services:
   misp-sentinel:
     build: misp_sentinel
