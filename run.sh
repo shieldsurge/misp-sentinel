@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Start supervisord
 echo "Starting supervisord"
 cd /
