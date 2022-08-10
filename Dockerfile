@@ -15,6 +15,12 @@ RUN git clone https://github.com/microsoftgraph/security-api-solutions.git
 RUN pip3 install -r security-api-solutions/Samples/MISP/requirements.txt
 RUN (crontab -l ; echo "0 1 * * * cd opt/security-api-solutions/Samples/MISP/ && python3 script.py") | crontab -
 
+RUN ( \
+    echo '[supervisord]'; \
+    echo 'nodaemon = true'; \
+    echo ''; \
+) >> /etc/supervisor/conf.d/supervisord.conf
+
 ADD run.sh /run.sh
 RUN chmod 0755 /run.sh
 ENTRYPOINT ["/run.sh"]
