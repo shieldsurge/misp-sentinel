@@ -1,0 +1,15 @@
+version: '1'
+
+services:
+  misp-sentinel:
+    build: misp_sentinel
+    container_name: misp_sentinel
+    image: misp_sentinel:latest
+    environment:
+      - MISP_KEY=${MISP_KEY:-misp_key}
+      - MISP_DOMAIN=${MISP_DOMAIN:-misp_url}
+      - TENANT=${TENANT:-tenant_id}
+      - CLIENT_ID=${CLIENT_ID:-client_id}
+      - CLIENT_SECRET=${CLIENT_SECRET:-client_secret}
+      - TARGET_PRODUCT=${TARGET_PRODUCT:-targetProduct}
+      - ACTION=${ACTION:-action}
