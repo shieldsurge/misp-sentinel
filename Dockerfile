@@ -13,7 +13,7 @@ RUN pip3 install --upgrade pip
 WORKDIR /opt/
 RUN git clone https://github.com/microsoftgraph/security-api-solutions.git
 RUN pip3 install requests requests-futures pymisp
-RUN (crontab -l ; echo "0 1 * * * cd opt/security-api-solutions/Samples/MISP/ && python3 script.py") | crontab -
+RUN (crontab -l ; echo "0 1 * * * cd /opt/security-api-solutions/Samples/MISP/ && python3 script.py") | crontab -
 
 RUN ( \
     echo '[supervisord]'; \
