@@ -11,6 +11,9 @@ sed -i "s|'client_secret'\s*:\s*.*,$|'client_secret': '$CLIENT_SECRET',|" config
 sed -i "s|targetProduct\s*=\s*.*$|targetProduct = '$TARGET_PRODUCT'|" config.py
 sed -i "s|action\s*=\s*.*$|action = '$ACTION'|" config.py
 
+#Start cron service
+service cron start
+
 # Start supervisord
 echo "Starting supervisord"
 cd /
