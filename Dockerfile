@@ -22,4 +22,5 @@ RUN ( \
 
 ADD run.sh /run.sh
 RUN chmod 0755 /run.sh
+RUN touch /.firstboot.tmp
 ENTRYPOINT ["/run.sh"]
