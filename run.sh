@@ -11,8 +11,14 @@ sed -i "s|'client_secret'\s*:\s*.*,$|'client_secret': '$CLIENT_SECRET',|" config
 sed -i "s|targetProduct\s*=\s*.*$|targetProduct = '$TARGET_PRODUCT'|" config.py
 sed -i "s|action\s*=\s*.*$|action = '$ACTION'|" config.py
 
-#Add cron job to run MISP to Sentinel script and start cron service
-{ crontab -l 2>/dev/null || true; echo "0 1 * * * cd /opt/security-api-solutions/Samples/MISP/ && python3 script.py"; } | crontab -
+if [ -r /.firstboot.tmp ]; then
+        # Add cron job to run MISP to Sentinel script
+        { crontab -l 2>/dev/null || true; echo "0 1 * * * cd /opt/security-api-solutions/Samples/MISP/ && python3 script.py"; } | crontab -
+        
+        rm -f /.firstboot.tmp
+fi
+
+# Start cron service
 service cron start
 
 # Start supervisord
