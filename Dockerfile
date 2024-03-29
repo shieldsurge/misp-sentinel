@@ -11,7 +11,7 @@ RUN apt-get install -y python3 python3-pip git cron supervisor vim emacs nano cu
 RUN pip3 install --upgrade pip
 
 WORKDIR /opt/
-RUN git clone https://github.com/microsoftgraph/security-api-solutions.git
+COPY security-api-solutions_MISP ./security-api-solutions_MISP
 RUN pip3 install requests requests-futures pymisp
 
 RUN ( \
