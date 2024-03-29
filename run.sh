@@ -13,7 +13,7 @@ sed -i "s|action\s*=\s*.*$|action = '$ACTION'|" config.py
 
 if [ -r /.firstboot.tmp ]; then
         # Add cron job to run MISP to Sentinel script
-        { crontab -l 2>/dev/null || true; echo "0 1 * * * cd /opt/security-api-solutions/Samples/MISP/ && python3 script.py"; } | crontab -
+        { crontab -l 2>/dev/null || true; echo "0 1 * * * cd /opt/security-api-solutions_MISP/ && python3 script.py"; } | crontab -
         
         rm -f /.firstboot.tmp
 fi
