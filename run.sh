@@ -2,7 +2,7 @@
 
 # MISP configuration
 echo "Creating MISP to Sentinel integration configuration file"
-cd /opt/security-api-solutions/Samples/MISP
+cd /opt/security-api-solutions_MISP
 sed -i "s|misp_key\s*=\s*.*$|misp_key = '$MISP_KEY'|" config.py
 sed -i "s|misp_domain\s*=\s*.*$|misp_domain = '$MISP_DOMAIN'|" config.py
 sed -i "s|'tenant'\s*:\s*.*,$|'tenant': '$TENANT',|" config.py
